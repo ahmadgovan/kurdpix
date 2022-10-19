@@ -60,6 +60,9 @@ async function cleanBans() {
     },
     raw: true,
   });
+  if (!expiredIPs.length) {
+    return;
+  }
   const ips = [];
   for (let i = 0; i < expiredIPs.length; i += 1) {
     ips.push(expiredIPs[i].ip);
