@@ -15,8 +15,8 @@ export default async (req, res) => {
     return;
   }
 
-  const { name, email, mailVerified } = user.regUser;
-  if (mailVerified) {
+  const { name, email, verified } = user.regUser;
+  if (verified) {
     res.status(400);
     res.json({
       errors: ['You are already verified.'],

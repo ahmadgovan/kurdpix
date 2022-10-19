@@ -77,7 +77,7 @@ app.use(routes);
 // ip config
 // -----------------------------------------------------------------------------
 // sync sql models
-sequelize.sync({ alter: { drop: false } })
+sequelize.sync({ alter: { drop: true } })
   // connect to redis
   .then(connectRedis)
   .then(async () => {

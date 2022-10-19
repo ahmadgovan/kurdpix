@@ -56,7 +56,7 @@ export default async (req, res) => {
 
   await user.regUser.update({
     email,
-    mailVerified: false,
+    verified: false,
   });
 
   const host = getHostFromRequest(req);

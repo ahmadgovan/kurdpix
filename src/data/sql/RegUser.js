@@ -38,7 +38,7 @@ const RegUser = sequelize.define('User', {
     defaultValue: false,
   },
 
-  // null if external oauth authentification
+  // null if only ever used external oauth
   password: {
     type: DataTypes.CHAR(60),
     allowNull: true,
@@ -51,9 +51,9 @@ const RegUser = sequelize.define('User', {
     defaultValue: 0,
   },
 
-  // mail and Minecraft verified
+  // currently just mail verification
   verified: {
-    type: DataTypes.TINYINT,
+    type: DataTypes.BOOLEAN,
     allowNull: false,
     defaultValue: false,
   },
@@ -98,10 +98,6 @@ const RegUser = sequelize.define('User', {
   updatedAt: false,
 
   getterMethods: {
-    mailVerified() {
-      return this.verified & 0x01;
-    },
-
     blockDm() {
       return this.blocks & 0x01;
     },
@@ -112,11 +108,6 @@ const RegUser = sequelize.define('User', {
   },
 
   setterMethods: {
-    mailVerified(num) {
-      const val = (num) ? (this.verified | 0x01) : (this.verified & ~0x01);
-      this.setDataValue('verified', val);
-    },
-
     blockDm(num) {
       const val = (num) ? (this.blocks | 0x01) : (this.blocks & ~0x01);
       this.setDataValue('blocks', val);

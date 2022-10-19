@@ -244,7 +244,7 @@ class User {
       return {
         ...data,
         name: null,
-        mailVerified: false,
+        verified: false,
         blockDm: false,
         priv: false,
         mailreg: false,
@@ -260,7 +260,7 @@ class User {
     return {
       ...data,
       name: regUser.name,
-      mailVerified: regUser.mailVerified,
+      verified: regUser.verified,
       blockDm: regUser.blockDm,
       priv: regUser.priv,
       totalPixels,

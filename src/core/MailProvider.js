@@ -160,7 +160,7 @@ export class MailProvider {
       return false;
     }
     await reguser.update({
-      mailVerified: true,
+      verified: true,
       verificationReqAt: null,
     });
     return reguser.name;
