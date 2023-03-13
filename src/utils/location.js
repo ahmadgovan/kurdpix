@@ -3,7 +3,7 @@
  */
 
 /*
- * gets prefered language out of localisation string
+ * gets preferred language out of localisation string
  * @param location string (like from accept-language header)
  * @return language code
  */
