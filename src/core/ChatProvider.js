@@ -470,15 +470,15 @@ export class ChatProvider {
 
     let displayCountry = country;
     if (user.userlvl !== 0) {
-      displayCountry = 'zz';    
+      displayCountry = 'zz';
       /*
-      * meme names disabled for now
-      * TODO think about activating it again after fixing accounts and
-      * mute evasions
-      *
-     } else if (name.endsWith('berg') || name.endsWith('stein')) {
-       displayCountry = 'il';
-     / */
+       * meme names disabled for now
+       * TODO think about activating it again after fixing accounts and
+       * mute evasions
+       *
+       } else if (name.endsWith('berg') || name.endsWith('stein')) {
+         displayCountry = 'il';
+       / */
     } else if (user.id === 2927) {
       /*
        * hard coded flag for Manchukuo_1940
